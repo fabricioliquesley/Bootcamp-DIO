@@ -1,2 +1,3 @@
 # Bootcamp-DIO
-Repositório criado com a finalidade de armazenar os conceitos e tecnologias estudadas durante o bootcamp 
+<br>
+Repositório criado para armazenar os conceitos e tecnologias estudadas durante o bootcamp da DIO. 
