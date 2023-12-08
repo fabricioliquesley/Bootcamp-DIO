@@ -14,6 +14,7 @@ header {
     background-color: #000000;
     color: #ffffff;
     padding: 20px;
+    border-bottom: 5px solid #c42e2e;
 }
 
 .menu-score h2, 
