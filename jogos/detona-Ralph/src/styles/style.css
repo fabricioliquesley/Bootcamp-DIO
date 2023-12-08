@@ -1,5 +1,5 @@
-main {
-    display: flex;
+body {
+    height: 100vh;
 }
 
 header {
@@ -17,13 +17,13 @@ header {
 .menu-score h2, 
 .menu-time h2,
 .menu-lifes h2 {
-    color: rgb(196, 46, 46);
+    color: #c42e2e;
 }
 
 .menu-score span, 
 .menu-time span,
 .menu-lifes span {
-    color: white;
+    color: #ffffff;
 }
 
 .menu-lifes {
@@ -34,4 +34,30 @@ header {
 
 .menu-lifes img {
     width: 60px;
+}
+
+main {
+    display: grid;
+    place-content: center;
+
+    width: 100%;
+    height: calc(100% - 130px);
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c42e2e;
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000000;
+}
+
+.enemy {
+    background: #c42e2e;
 }
