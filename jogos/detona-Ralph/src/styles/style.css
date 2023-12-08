@@ -19,23 +19,23 @@ header {
 
 .menu-score h2, 
 .menu-time h2,
-.menu-lifes h2 {
+.menu-lives h2 {
     color: #c42e2e;
 }
 
 .menu-score span, 
 .menu-time span,
-.menu-lifes span {
+.menu-lives span {
     color: #ffffff;
 }
 
-.menu-lifes {
+.menu-lives {
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-.menu-lifes img {
+.menu-lives img {
     width: 60px;
 }
 
