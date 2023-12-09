@@ -68,6 +68,7 @@ main {
     height: 150px;
     background: #64cccc;
     border: 10px solid #222;
+    cursor: pointer;
 }
 
 .enemy {

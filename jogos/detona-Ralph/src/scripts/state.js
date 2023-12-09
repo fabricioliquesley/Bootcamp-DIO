@@ -7,6 +7,9 @@ export const state = {
         lives: document.querySelector("#lives"),
     },
     values: {
-
+        timerId: null,
+        gameVelocity: 1000,
+        hitPosition: 0,
+        score: 0
     }
 }
