@@ -1,0 +1,5 @@
+[] criar uma tela inicial
+[] salvar as melhores pontuaçãoes
+[] torna as vidas funcionais
+[] aumentar a velocidade do jogo quando o tempo [] estiver acabando
+[] criar um game over

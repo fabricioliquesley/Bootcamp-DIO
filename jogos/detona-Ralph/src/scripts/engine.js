@@ -15,20 +15,29 @@ function chooseRandomSquare() {
 }
 
 function countdown() {
-    if (state.values.currentTime > 0){
+    if (state.values.currentTime > 0) {
         state.values.currentTime--;
     }
     state.view.timeLeft.textContent = state.values.currentTime;
 
-    if (state.values.currentTime <= 0){
+    if (state.values.currentTime <= 0) {
+        clearInterval(state.actions.countDownTimerId);
+        clearInterval(state.actions.timerId);
         alert("game over pontuação: " + state.values.score);
     }
 }
 
-state.values.countDownTimerId = setInterval(countdown, 100);
+function playSound() {
+    let hitAudio = new Audio("./src/audios/hit.m4a");
+
+    hitAudio.volume = 0.02;
+    hitAudio.play();
+}
+
+state.actions.countDownTimerId = setInterval(countdown, 1000);
 
 function moveEnemy() {
-    state.values.timerId = setInterval(chooseRandomSquare, state.values.gameVelocity);
+    state.actions.timerId = setInterval(chooseRandomSquare, state.values.gameVelocity);
 }
 
 function addListenerBox() {
@@ -39,6 +48,7 @@ function addListenerBox() {
 
                 state.view.score.textContent = state.values.score;
                 state.values.hitPosition = null;
+                playSound();
             }
         })
     })

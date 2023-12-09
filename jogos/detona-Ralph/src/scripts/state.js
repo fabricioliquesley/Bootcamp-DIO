@@ -7,11 +7,13 @@ export const state = {
         lives: document.querySelector("#lives"),
     },
     values: {
-        timerId: null,
-        countDownTimerId: null,
         gameVelocity: 1000,
         hitPosition: 0,
         score: 0,
         currentTime: 60
+    },
+    actions: {
+        timerId: null,
+        countDownTimerId: null,
     }
 }
