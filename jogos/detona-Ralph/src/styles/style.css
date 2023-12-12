@@ -1,76 +1,16 @@
+@import url('reset.css');
+@import url('menu.css');
+@import url('game.css');
+
+:root {
+    font-size: 62.5%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     background: darkblue;
-    border-bottom: 40px solid rgb(15, 73, 15);
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-    height: 90px;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 20px;
-    border-bottom: 5px solid #c42e2e;
-}
-
-.menu-score h2, 
-.menu-time h2,
-.menu-lives h2 {
-    color: #c42e2e;
-}
-
-.menu-score span, 
-.menu-time span,
-.menu-lives span {
-    color: #ffffff;
-}
-
-.menu-lives {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.menu-lives img {
-    width: 60px;
-}
-
-main {
-    display: flex;
-    align-items: end;
-    justify-content: center;
-
-    width: 100%;
-    height: calc(100% - 130px);
-}
-
-.panel {
-    height: 100%;
-    background: url('../images/wall.png');
-    border-bottom: 30px solid #222;
-    border-top: 20px solid #222;
-    margin-bottom: -40px;
-    padding: 10px;
-}
-
-.panel .panel-row  {
-    display: flex;
-    gap: 10px;
-    margin-top: 60px;
-}
-
-.square {
-    width: 150px;
-    height: 150px;
-    background: #64cccc;
-    border: 10px solid #222;
-    cursor: pointer;
-}
-
-.enemy {
-    background: url('../images/ralph.png') center /cover no-repeat, #64cccc;
+    font-size: 1.6rem;
+    border-bottom: 4rem solid rgb(15, 73, 15);
 }
