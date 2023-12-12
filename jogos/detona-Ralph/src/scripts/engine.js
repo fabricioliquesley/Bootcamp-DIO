@@ -67,9 +67,7 @@ function addListenerBox() {
 }
 
 // Função inicial
-function main() {
+export function main() {
     moveEnemy();
     addListenerBox();
 }
-
-main();
