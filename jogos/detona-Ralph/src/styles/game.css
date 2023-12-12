@@ -1,0 +1,86 @@
+.countDown {
+    display: grid;
+    place-content: center;
+    flex: 1;
+    background: #222;
+    color: white;
+}
+
+.countDown h2 {
+    font-size: 5rem;
+}
+
+.game {
+    display: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 9rem;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2rem;
+    border-bottom: .5rem solid #c42e2e;
+}
+
+.menu-score h2, 
+.menu-time h2,
+.menu-lives h2 {
+    color: #c42e2e;
+}
+
+.menu-score span, 
+.menu-time span,
+.menu-lives span {
+    color: #ffffff;
+}
+
+.menu-lives {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.menu-lives img {
+    width: 6rem;
+}
+
+main {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    width: 100%;
+    height: calc(100% - 13rem);
+}
+
+.panel {
+    height: 100%;
+    background: url('../images/wall.png');
+    border-bottom: 3rem solid #222;
+    border-top: 2rem solid #222;
+    margin-bottom: -4rem;
+    padding: 1rem;
+}
+
+.panel .panel-row  {
+    display: flex;
+    gap: 1rem;
+    margin-top: 6rem;
+}
+
+.square {
+    width: 15rem;
+    height: 15rem;
+    background: #64cccc;
+    border: 1rem solid #222;
+    cursor: pointer;
+}
+
+.enemy {
+    background: url('../images/ralph.png') center /cover no-repeat, #64cccc;
+}
