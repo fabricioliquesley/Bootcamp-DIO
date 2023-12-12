@@ -14,6 +14,12 @@ function chooseRandomSquare() {
     state.values.hitPosition = randomSquare.id;
 }
 
+function gameOver() {
+    clearInterval(state.actions.countDownTimerId);
+    clearInterval(state.actions.timerId);
+    alert("game over pontuação: " + state.values.score);
+}
+
 function countdown() {
     if (state.values.currentTime > 0) {
         state.values.currentTime--;
@@ -21,16 +27,14 @@ function countdown() {
     state.view.timeLeft.textContent = state.values.currentTime;
 
     if (state.values.currentTime <= 0) {
-        clearInterval(state.actions.countDownTimerId);
-        clearInterval(state.actions.timerId);
-        alert("game over pontuação: " + state.values.score);
+        gameOver();
     }
 }
 
 function playSound() {
-    let hitAudio = new Audio("./src/audios/hit.m4a");
+    let hitAudio = new Audio("./src/audios/soco.mp3");
 
-    hitAudio.volume = 0.02;
+    hitAudio.volume = 0.1;
     hitAudio.play();
 }
 
@@ -49,6 +53,14 @@ function addListenerBox() {
                 state.view.score.textContent = state.values.score;
                 state.values.hitPosition = null;
                 playSound();
+            } else {
+                let lives = state.values.lives -= 1;
+
+                state.view.lives.textContent = lives;
+
+                if (lives == 0) {
+                    gameOver();
+                }
             }
         })
     })

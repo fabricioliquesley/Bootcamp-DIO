@@ -10,6 +10,7 @@ export const state = {
         gameVelocity: 1000,
         hitPosition: 0,
         score: 0,
+        lives: 3,
         currentTime: 60
     },
     actions: {
