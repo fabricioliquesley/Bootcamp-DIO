@@ -1,0 +1,63 @@
+section {
+    display: grid;
+    place-content: center;
+    flex: 1;
+    background: #222;
+    color: #ffffff;
+}
+
+.menu h1 {
+    margin-bottom: 100px;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+menu a {
+    color: white;
+    cursor: pointer;
+    animation: infinite both 2s pulse;
+
+    transition: .2s;
+}
+
+menu a:hover {
+    text-shadow: 0px 0px 20px white
+}
+
+menu details summary {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+menu details summary::marker,
+li::marker, h1 b {
+    color: red;
+}
+
+menu details ol {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    /* list-style: none; */
+    gap: 10px;
+}
+
+li {
+    text-align: end;
+    margin-left: 40px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
