@@ -45,8 +45,11 @@ header {
     gap: .4rem;
 }
 
-.menu-lives img {
-    width: 6rem;
+.ralph {
+    width: 5rem;
+    height: 5rem;
+    background: url('../images/detona-ralph-icon.png');
+    background-size: cover;
 }
 
 main {

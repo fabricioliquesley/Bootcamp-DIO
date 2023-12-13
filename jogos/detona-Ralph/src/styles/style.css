@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: darkblue;
+    background: rgb(9, 9, 56);
     font-size: 1.6rem;
     border-bottom: 4rem solid rgb(15, 73, 15);
 }

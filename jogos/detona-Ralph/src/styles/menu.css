@@ -2,12 +2,11 @@ section {
     display: grid;
     place-content: center;
     flex: 1;
-    background: #222;
     color: #ffffff;
 }
 
-.menu h1 {
-    margin-bottom: 100px;
+.menu {
+    background: #222;
 }
 
 menu {
@@ -15,6 +14,10 @@ menu {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+}
+
+.menu h1 {
+    margin-bottom: 100px;
 }
 
 menu a {
