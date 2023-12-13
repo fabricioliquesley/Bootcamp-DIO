@@ -20,7 +20,7 @@ menu {
     margin-bottom: 100px;
 }
 
-menu a {
+menu h2 {
     color: white;
     cursor: pointer;
     animation: infinite both 2s pulse;
@@ -28,8 +28,12 @@ menu a {
     transition: .2s;
 }
 
-menu a:hover {
+menu h2:hover {
     text-shadow: 0px 0px 20px white
+}
+
+a {
+    color: white;
 }
 
 menu details summary {
