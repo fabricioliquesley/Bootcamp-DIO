@@ -3,6 +3,8 @@ import { Router } from "./router.js";
 
 let router = new Router();
 
+router.add('/start', "/src/pages/game.html");
+
 function chooseRandomSquare() {
     state.view.squares.forEach((square) => {
         square.classList.remove("enemy");
@@ -14,6 +16,19 @@ function chooseRandomSquare() {
 
     randomSquare.classList.add("enemy");
     state.values.hitPosition = randomSquare.id;
+}
+
+function resetStateValues() {
+    state.values.gameVelocity = 500
+    state.values.hitPosition = 0
+    state.values.score = 0
+    state.values.lives = 3
+    state.values.currentTime = 60
+    state.values.durationCountDow = 3
+    state.actions.timerId = null
+    state.actions.countDownTimerId = null
+    state.actions.countDownToStartId = null
+    state.actions.moveEnemyTimer = null
 }
 
 function gameOver() {
@@ -42,11 +57,17 @@ function gameOver() {
     gameOverModal.backMenuBtn.addEventListener('click', () => {
         router.handle();
 
+        resetStateValues();
+
         gameOverModal.close();
     })
 
     gameOverModal.restartBtn.addEventListener('click', () => {
-        alert('restart')
+        router.route();
+
+        resetStateValues();
+
+        state.actions.countDownToStartId = setInterval(countDownToStar, 1000);
     })
 }
 
