@@ -97,15 +97,15 @@ dialog {
     background: #222;
     color: white;
 
-    padding: 40px;
+    padding: 4rem;
     border: 1px solid white;
-    border-radius: 12px;
+    border-radius: 1.2rem;
 }
 
 dialog .content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
 }
 
 dialog::backdrop {
@@ -113,15 +113,21 @@ dialog::backdrop {
 }
 
 dialog h2 {
-    font-size: 36px;
+    font-size: 3.6rem;
 }
 
 dialog p {
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
-dialog button {
-    padding: 10px 20px;
+dialog button,
+dialog a {
+    background: white;
+    color: #000000;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1rem 2rem;
     cursor: pointer;
     text-transform: uppercase;
+    border: none;
 }
