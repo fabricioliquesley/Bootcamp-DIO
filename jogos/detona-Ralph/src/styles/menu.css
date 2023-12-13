@@ -36,27 +36,8 @@ a {
     color: white;
 }
 
-menu details summary {
-    font-size: 18px;
-    cursor: pointer;
-}
-
-menu details summary::marker,
-li::marker, h1 b {
+h1 b {
     color: red;
-}
-
-menu details ol {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 10px;
-    /* list-style: none; */
-    gap: 10px;
-}
-
-li {
-    text-align: end;
-    margin-left: 40px;
 }
 
 @keyframes pulse {

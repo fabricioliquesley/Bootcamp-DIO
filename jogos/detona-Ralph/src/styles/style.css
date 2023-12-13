@@ -13,5 +13,8 @@ body {
     height: 100vh;
     background: rgb(9, 9, 56);
     font-size: 1.6rem;
+}
+
+body.isRunning {
     border-bottom: 4rem solid rgb(15, 73, 15);
 }

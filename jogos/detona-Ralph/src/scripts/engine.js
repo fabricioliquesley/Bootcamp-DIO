@@ -58,6 +58,7 @@ function gameOver() {
         router.handle();
 
         resetStateValues();
+        document.body.classList.toggle('isRunning');
 
         gameOverModal.close();
     })
@@ -66,6 +67,7 @@ function gameOver() {
         router.route();
 
         resetStateValues();
+        document.body.classList.toggle('isRunning');
 
         state.actions.countDownToStartId = setInterval(countDownToStar, 1000);
     })
@@ -134,13 +136,15 @@ export function countDownToStar() {
 
 // Função inicial
 function main() {
-    state.view.squares = document.querySelectorAll(".square"),
-    state.view.enemy = document.querySelector(".enemy"),
-    state.view.score = document.querySelector("#score"),
-    state.view.timeLeft = document.querySelector("#time"),
-    state.view.lives = document.querySelector("#lives"),
+    document.body.classList.toggle('isRunning');
 
-    state.actions.countDownTimerId = setInterval(countdown, 1000);
+    state.view.squares = document.querySelectorAll(".square"),
+        state.view.enemy = document.querySelector(".enemy"),
+        state.view.score = document.querySelector("#score"),
+        state.view.timeLeft = document.querySelector("#time"),
+        state.view.lives = document.querySelector("#lives"),
+
+        state.actions.countDownTimerId = setInterval(countdown, 1000);
 
     moveEnemy();
     addListenerBox();
