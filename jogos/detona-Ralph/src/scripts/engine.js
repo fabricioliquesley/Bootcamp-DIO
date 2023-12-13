@@ -1,5 +1,7 @@
 import { state } from "./state.js";
+import { Router } from "./router.js";
 
+let router = new Router();
 
 function chooseRandomSquare() {
     state.view.squares.forEach((square) => {
@@ -18,11 +20,17 @@ function gameOver() {
     const gameOverModal = {
         modal: document.querySelector('#gameOverModal'),
         finalScore: document.querySelector('#finalScore'),
+        backMenuBtn: document.querySelector('#backMenu'),
+        restartBtn: document.querySelector('#restart'),
 
         open: function () {
             this.finalScore.textContent = state.values.score;
 
             this.modal.showModal();
+        },
+
+        close: function () {
+            this.modal.close();
         }
     }
 
@@ -30,6 +38,16 @@ function gameOver() {
     clearInterval(state.actions.timerId);
 
     gameOverModal.open()
+
+    gameOverModal.backMenuBtn.addEventListener('click', () => {
+        router.handle();
+
+        gameOverModal.close();
+    })
+
+    gameOverModal.restartBtn.addEventListener('click', () => {
+        alert('restart')
+    })
 }
 
 function countdown() {

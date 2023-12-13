@@ -7,7 +7,7 @@ export let state = {
         lives: null,
     },
     values: {
-        gameVelocity: 1000,
+        gameVelocity: 500,
         hitPosition: 0,
         score: 0,
         lives: 3,
@@ -18,5 +18,6 @@ export let state = {
         timerId: null,
         countDownTimerId: null,
         countDownToStartId: null,
+        moveEnemyTimer: null,
     }
 }
