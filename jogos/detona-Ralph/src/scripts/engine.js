@@ -15,9 +15,21 @@ function chooseRandomSquare() {
 }
 
 function gameOver() {
+    const gameOverModal = {
+        modal: document.querySelector('#gameOverModal'),
+        finalScore: document.querySelector('#finalScore'),
+
+        open: function () {
+            this.finalScore.textContent = state.values.score;
+
+            this.modal.showModal();
+        }
+    }
+
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timerId);
-    alert("game over pontuação: " + state.values.score);
+
+    gameOverModal.open()
 }
 
 function countdown() {
