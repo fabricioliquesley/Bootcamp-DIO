@@ -1,5 +1,6 @@
 import { Router } from "./router.js";
-// import { main } from "./engine.js";
+import { countDownToStar } from "./engine.js";
+import { state } from "./state.js";
 
 const router = new Router();
 
@@ -12,4 +13,6 @@ router.handle();
 window.onpopstate = () => router.handle();
 window.route = () => {
     router.route()
+
+    state.actions.countDownToStartId = setInterval(countDownToStar, 1000);
 }

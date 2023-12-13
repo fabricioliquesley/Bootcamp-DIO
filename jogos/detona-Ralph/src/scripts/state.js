@@ -1,11 +1,10 @@
-export const state = {
+export let state = {
     view: {
-        squares: document.querySelectorAll(".square"),
-        enemy: document.querySelector(".enemy"),
-        score: document.querySelector("#score"),
-        timeLeft: document.querySelector("#time"),
-        lives: document.querySelector("#lives"),
-        countDownContainer: document.querySelector('.countDown')
+        squares: null,
+        enemy: null,
+        score: null,
+        timeLeft: null,
+        lives: null,
     },
     values: {
         gameVelocity: 1000,

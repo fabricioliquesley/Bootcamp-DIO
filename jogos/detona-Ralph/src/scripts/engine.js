@@ -24,6 +24,7 @@ function countdown() {
     if (state.values.currentTime > 0) {
         state.values.currentTime--;
     }
+
     state.view.timeLeft.textContent = state.values.currentTime;
 
     if (state.values.currentTime <= 0) {
@@ -37,8 +38,6 @@ function playSound() {
     hitAudio.volume = 0.1;
     hitAudio.play();
 }
-
-state.actions.countDownTimerId = setInterval(countdown, 1000);
 
 function moveEnemy() {
     state.actions.timerId = setInterval(chooseRandomSquare, state.values.gameVelocity);
@@ -66,8 +65,32 @@ function addListenerBox() {
     })
 }
 
+export function countDownToStar() {
+    let number = document.querySelector('#number')
+
+    if (state.values.durationCountDow > 0) {
+        state.values.durationCountDow -= 1;
+
+        number.textContent = state.values.durationCountDow;
+    } else {
+        clearInterval(state.actions.countDownToStartId);
+        document.querySelector('.game').style.display = 'block';
+        document.querySelector('.countDown').style.display = 'none'
+
+        main();
+    }
+}
+
 // Função inicial
-export function main() {
+function main() {
+    state.view.squares = document.querySelectorAll(".square"),
+    state.view.enemy = document.querySelector(".enemy"),
+    state.view.score = document.querySelector("#score"),
+    state.view.timeLeft = document.querySelector("#time"),
+    state.view.lives = document.querySelector("#lives"),
+
+    state.actions.countDownTimerId = setInterval(countdown, 1000);
+
     moveEnemy();
     addListenerBox();
 }
