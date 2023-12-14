@@ -5,17 +5,24 @@ let router = new Router();
 
 router.add('/start', "/src/pages/game.html");
 
+let shuffledSquares = [];
+
+function shuffleSquares() {
+    shuffledSquares = [...state.view.squares].sort(() => Math.random() - 0.5);
+}
+
 function chooseRandomSquare() {
     state.view.squares.forEach((square) => {
         square.classList.remove("enemy");
     })
 
-    // gera um numero entre 1 e 9
-    let randomNumber = Math.floor(Math.random() * 9);
-    let randomSquare = state.view.squares[randomNumber];
+    if (shuffledSquares.length === 0){
+        shuffleSquares();
+    }
 
-    randomSquare.classList.add("enemy");
-    state.values.hitPosition = randomSquare.id;
+    const nextSquare = shuffledSquares.pop();
+    nextSquare.classList.add("enemy");
+    state.values.hitPosition = nextSquare.id;
 }
 
 function resetStateValues() {
