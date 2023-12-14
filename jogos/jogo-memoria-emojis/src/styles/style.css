@@ -14,6 +14,7 @@ body {
     min-height: 100vh;
     background: #222;
     font-size: 1.6rem;
+    user-select: none;
 }
 
 .container {
@@ -43,7 +44,7 @@ h2 {
     width: 64rem;
     height: 64rem;
     padding: 2rem;
-    border: 1px solid #222;
+    /* border: 1px solid #222; */
 
     transform-style: preserve-3d;
     perspective: 50rem;
@@ -51,8 +52,32 @@ h2 {
 
 .card {
     position: relative;
-    background: #222;
+    background: white;
+    border: 1px solid #222;
+    font-size:  4rem;
+
+    transform: rotateY(180deg);
+    transition: 0.25s;
     cursor: pointer;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #222;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.card.open {
+    transform: rotateY(0deg);
+}
+
+.open::after,
+.cardMatch::after {
+    transform: rotateY(180deg);
 }
 
 #resetButton {
