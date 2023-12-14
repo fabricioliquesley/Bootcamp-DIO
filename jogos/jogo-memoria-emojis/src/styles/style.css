@@ -25,3 +25,53 @@ body {
     padding: 4rem 6rem;
     box-shadow:  1px 10px rgba(0, 0, 0, 0.4);
 }
+
+h2 {
+    color: #000;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+.game {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 64rem;
+    height: 64rem;
+    border: 1px solid #222;
+
+    transform-style: preserve-3d;
+    perspective: 50rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 10rem;
+}
+
+#resetButton {
+    width: 100%;
+    background: #222;
+    color: #fff;
+
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+
+    border: none;
+    border-radius: 1.2rem;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+#resetButton:hover {
+    background: #444444;
+}
