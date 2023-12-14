@@ -1,1 +1,27 @@
 @import url('reset.css');
+
+:root {
+    font-size: 62.5%;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    min-height: 100vh;
+    background: #222;
+    font-size: 1.6rem;
+}
+
+.container {
+    position: relative;
+    flex-direction: column;
+    gap: 3rem;
+    background: white;
+    border-radius: 1.2rem;
+    padding: 4rem 6rem;
+    box-shadow:  1px 10px rgba(0, 0, 0, 0.4);
+}
