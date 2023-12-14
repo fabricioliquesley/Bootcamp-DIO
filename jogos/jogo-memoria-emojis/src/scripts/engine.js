@@ -28,5 +28,15 @@ function handleClick() {
 }
 
 function checkMatch() {
-    
+    if(openCards[0].innerHTML === openCards[1].innerHTML) {
+        openCards.forEach((card) => card.classList.add('cardMatch'));
+    } else {
+        openCards.forEach((card) => card.classList.remove('open'))
+    }
+
+    openCards = [];
+
+    if (document.querySelectorAll(".cardMatch").length === emotes.length) {
+        alert("Você venceu !")
+    }
 }
