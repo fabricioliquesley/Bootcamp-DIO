@@ -1,4 +1,5 @@
-import { emotes } from "../scripts/emotes.js"
+import { emotes } from "../scripts/emotes.js";
+import { currentTimeValues, timer } from "./timer.js";
 
 let cardsContainer = document.querySelector('.game')
 
@@ -6,9 +7,11 @@ let openCards = [];
 
 let victoryAlert = {
     alert: document.querySelector('.victoryAlert'),
+    totalTime: document.querySelector('#totalTime'),
 
     open: function () {
         this.alert.showModal();
+        this.totalTime.textContent = `Tempo total gasto: ${String(currentTimeValues.currentTimeMinutes).padStart(2, '0')}:${String(currentTimeValues.currentTimeSeconds).padStart(2, '0')}`
     },
 
     close: function () {
@@ -39,6 +42,8 @@ function handleClick() {
     }
 }
 
+let timerId = setInterval(() => timer(currentTimeValues.currentTimeSeconds, currentTimeValues.currentTimeMinutes), 1000)
+
 function checkMatch() {
     if (openCards[0].innerHTML === openCards[1].innerHTML) {
         openCards.forEach((card) => card.classList.add('cardMatch'));
@@ -49,6 +54,7 @@ function checkMatch() {
     openCards = [];
 
     if (document.querySelectorAll(".cardMatch").length === emotes.length) {
+        clearInterval(timerId);
         victoryAlert.open()
     }
 }
