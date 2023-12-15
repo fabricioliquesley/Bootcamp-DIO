@@ -1,2 +1,0 @@
-cor dos cards encontardos: #fcae1e
-adicionar a class flex nos cards e no game
