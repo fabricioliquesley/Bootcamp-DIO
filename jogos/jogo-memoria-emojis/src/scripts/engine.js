@@ -4,6 +4,18 @@ let cardsContainer = document.querySelector('.game')
 
 let openCards = [];
 
+let victoryAlert = {
+    alert: document.querySelector('.victoryAlert'),
+
+    open: function () {
+        this.alert.showModal();
+    },
+
+    close: function () {
+        this.alert.close();
+    }
+}
+
 let shuffleEmojis = emotes.sort(() => (Math.random() > 0.5) ? 2 : -1);
 
 shuffleEmojis.forEach((emote) => {
@@ -28,7 +40,7 @@ function handleClick() {
 }
 
 function checkMatch() {
-    if(openCards[0].innerHTML === openCards[1].innerHTML) {
+    if (openCards[0].innerHTML === openCards[1].innerHTML) {
         openCards.forEach((card) => card.classList.add('cardMatch'));
     } else {
         openCards.forEach((card) => card.classList.remove('open'))
@@ -37,6 +49,12 @@ function checkMatch() {
     openCards = [];
 
     if (document.querySelectorAll(".cardMatch").length === emotes.length) {
-        alert("Você venceu !")
+        victoryAlert.open()
     }
 }
+
+document.querySelector('#resetButton').addEventListener('click', () => {
+    window.location.reload()
+
+    victoryAlert.close();
+})
