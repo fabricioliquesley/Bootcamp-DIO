@@ -14,4 +14,4 @@ Repositório criado para armazenar os conceitos e tecnologias estudadas durante 
 |---------|------|
 | Desafio 01 | [🔗 Link](https://github.com/fabricioliquesley/trilha-css-desafio-01)
 | Detona Ralph | [🔗 Link](https://github.com/fabricioliquesley/Bootcamp-DIO/tree/main/jogos/detona-Ralph)
-| Jogo da Forca | [🔗 Link](https://github.com/fabricioliquesley/Bootcamp-DIO/tree/main/jogos/jogo-memoria-emojis)
+| Jogo da Memória | [🔗 Link](https://github.com/fabricioliquesley/Bootcamp-DIO/tree/main/jogos/jogo-memoria-emojis)
