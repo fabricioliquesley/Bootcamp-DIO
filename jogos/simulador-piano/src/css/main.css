@@ -1,1 +1,5 @@
 @import url("reset.css");
+
+body {
+    background: rgb(224, 253, 224);
+}
