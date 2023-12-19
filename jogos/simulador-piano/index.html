@@ -12,14 +12,17 @@
     <main>
         <section class="header">
             <h2>Virtual Piano</h2>
-            <menu id="constrols">
-                <div class="volume-slider">
+            <menu id="controls" class="flex">
+                <div class="volume-slider flex">
                     <label for="Volume">Volume</label>
-                    <input type="range" id="Volume" min="0" max="100" step="1">
+                    <input type="range" id="Volume" min="0" max="100" step="1" aria-orientation="vertical">
                 </div>
-                <div class="keys-check">
+                <div class="keys-check flex">
                     <label for="keysCheck">Teclas</label>
                     <input type="checkbox" id="keysCheck">
+                    <div class="toggleButton flex">
+                        <div class="ball"></div>
+                    </div>
                 </div>
             </menu>
         </section>

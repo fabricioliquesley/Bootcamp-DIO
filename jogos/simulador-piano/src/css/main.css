@@ -4,6 +4,11 @@
     font-size: 62.5%;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+}
+
 body {
     display: grid;
     place-content: center;
@@ -20,6 +25,66 @@ main {
 
 section {
     display: flex;
+}
+
+section.header {
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 4rem;
+}
+
+#controls {
+    gap: 2rem;
+}
+
+.volume-slider {
+    flex-direction: column-reverse;
+    gap: 5px;
+}
+
+input[type="range"]{
+    width: 100px;
+}
+
+.keys-check {
+    position: relative;
+    gap: 10px;
+}
+
+#keysCheck {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.6rem;
+    height: 2rem;
+    appearance: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.keys-check .toggleButton {
+    width: 3.6rem;
+    height: 2rem;
+    border: 1px solid rgb(24, 24, 24);
+    border-radius: 999px;
+    padding: .2rem;
+    transition: .4s;
+}
+
+.toggleButton .ball {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: white;
+    border-radius: 50%;
+}
+
+#keysCheck:checked ~ .toggleButton {
+    background: #005CC8;
+}
+
+#keysCheck:checked ~ .toggleButton .ball {
+    transform: translateX(17px);
 }
 
 section#pianoKeys {
@@ -44,6 +109,8 @@ section#pianoKeys {
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     cursor: pointer;
+
+    box-shadow: black -1px 2px 7px 0px inset
 }
 
 .key.whiteKey {
@@ -62,27 +129,12 @@ section#pianoKeys {
     left: calc(43px * var(--position));
     width: 3.3rem;
     height: 15rem;
-    background: black;
+    background: rgb(24, 24, 24);
     padding-bottom: 1rem;
+
+    box-shadow: 1px 1px 10px black;
 }
 
 .key.blackKey:hover {
-    background: rgb(37, 37, 37);
+    background: rgb(51, 51, 51);
 }
-
-/* --position: 2.5 */
-
-/* .key:nth-child(2){
-    background: red;
-    left: 34px;
-}
-
-.key:nth-child(4){
-    background: red;
-    left: calc(34px * 2.5);
-}
-
-.key:nth-child(7){
-    background: red;
-    left: calc(34px * 5.5);
-} */
