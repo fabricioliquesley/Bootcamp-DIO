@@ -119,6 +119,10 @@ section#pianoKeys {
     background: rgb(218, 218, 218);
 }
 
+.whiteKey.active {
+    background: rgb(218, 218, 218);
+}
+
 .key.blackKey {
     position: absolute;
     left: calc(43px * var(--position));
@@ -131,5 +135,9 @@ section#pianoKeys {
 }
 
 .key.blackKey:hover {
+    background: rgb(51, 51, 51);
+}
+
+.blackKey.active {
     background: rgb(51, 51, 51);
 }
