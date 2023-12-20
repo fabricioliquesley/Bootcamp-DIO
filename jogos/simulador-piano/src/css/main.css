@@ -141,3 +141,7 @@ section#pianoKeys {
 .blackKey.active {
     background: rgb(51, 51, 51);
 }
+
+.key .letter.hide {
+    opacity: 0;
+}

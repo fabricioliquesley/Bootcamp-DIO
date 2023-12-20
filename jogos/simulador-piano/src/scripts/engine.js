@@ -48,13 +48,7 @@ document.addEventListener("keydown", (event) => {
 keysCheck.addEventListener("change", () => {
     let letter = document.querySelectorAll(".letter");
 
-    letter.forEach(letter => {
-        if (keysCheck.checked) {
-            return letter.style.opacity = "0";
-        }
-
-        return letter.style.opacity = "1";
-    });
+    letter.forEach(letter => letter.classList.toggle("hide"));
 });
 
 VolumeSlider.addEventListener("input", () => {
