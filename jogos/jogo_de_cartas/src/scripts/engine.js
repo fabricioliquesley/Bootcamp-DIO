@@ -1,15 +1,35 @@
-import { state } from "./state.js";
+// import { state } from "./state.js";
 import { cardData } from "./cards.js";
 
 const playersSide = {
-    player: "player-field-card",
-    enemy: "enemy-field-card"
+    player: "player-cards",
+    enemy: "enemy-cards"
 }
 
 async function getRandomCardId() {
     const randomIndex = Math.floor(Math.random() * cardData.length);
 
     return cardData[randomIndex].id;
+}
+
+async function createCardImage(cardId, fieldSide) {
+    const cardImage = document.createElement("img");
+    cardImage.setAttribute("height", "130px");
+    cardImage.setAttribute("src", "./src/assets/icons/card-back.png");
+    cardImage.setAttribute("data-id", cardId);
+    cardImage.classList.add("card");
+
+    if (fieldSide === playersSide.player) {
+        cardImage.addEventListener("click", () => {
+            setCardsField(cardImage.getAttribute("data-id"));
+        });
+    }
+
+    cardImage.addEventListener("mouseover", () => {
+        drawSelectedCard(cardId);
+    });
+
+    return cardImage;
 }
 
 async function drawCards(cardsNumber, fieldSide) {

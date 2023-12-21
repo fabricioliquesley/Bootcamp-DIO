@@ -1,4 +1,4 @@
-const pathImages = ".src/assets/icons/";
+const pathImages = "./src/assets/icons/";
 
 export const cardData = [
     {
