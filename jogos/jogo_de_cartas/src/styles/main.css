@@ -2,10 +2,25 @@
 @import url("containers_and_frames.css");
 @import url("buttons.css");
 
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+/* Classe utilitárias */
+.frame {
+    border: 3px solid #000;
+    border-radius: 5px;
+}
+
+/* Estilização normal */
 .bg-video {
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -29,4 +44,37 @@
 
 .bg-video .video {
     height: 100vh;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    z-index: 3;
+}
+
+.container_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    min-width: 30rem;
+}
+
+.score_box, .card_details {
+    background: #fff;
+    padding: 3rem;
+}
+
+.card_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 12rem;
+}
+
+#card-name {
+    font-size: 1.4rem;
 }
