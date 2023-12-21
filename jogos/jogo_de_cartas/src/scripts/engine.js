@@ -1,21 +1,61 @@
 import { state } from "./state.js";
 import { cardData } from "./cards.js";
 
-const playersSide = {
-    player: "player-cards",
-    enemy: "enemy-cards"
-}
-
 async function getRandomCardId() {
     const randomIndex = Math.floor(Math.random() * cardData.length);
 
     return cardData[randomIndex].id;
 }
 
-async function drawSelectedCard(index){
+async function drawSelectedCard(index) {
     state.cardsSprites.card.src = cardData[index].img;
     state.cardsSprites.name.textContent = cardData[index].name;
     state.cardsSprites.type.textContent = `Type: ${cardData[index].type}`;
+}
+
+async function removeAllCardsImages() {
+    let { enemyBox, playerBox } = state.playersSide;
+
+    let imgElements = enemyBox.querySelectorAll("img");
+    imgElements.forEach((img) => img.remove());
+
+    imgElements = playerBox.querySelectorAll("img");
+    imgElements.forEach((img) => img.remove());
+}
+
+async function checkDuelResults(playerCardId, enemyCardId) {
+    let duelResults = "Empate";
+
+    let playerCard = cardData[playerCardId];
+
+    if (playerCard.WinOf.includes(enemyCardId)) {
+        duelResults = "Vitoria";
+    
+        state.score.playerScore++;
+    } else if (playerCard.LoseOf.includes(enemyCardId)) {
+        duelResults = "Derrota"
+
+        state.score.enemyScore++;
+    }
+
+    return duelResults;
+}
+
+async function setCardsField(cardId) {
+    await removeAllCardsImages();
+
+    let enemyCardId = await getRandomCardId();
+
+    state.fieldCards.player.style.display = "block";
+    state.fieldCards.enemy.style.display = "block";
+
+    state.fieldCards.player.src = cardData[cardId].img;
+    state.fieldCards.enemy.src = cardData[enemyCardId].img;
+
+    let duelResults = await checkDuelResults(cardId, enemyCardId);
+
+    await updateScore();
+    await drawButton(duelResults);
 }
 
 async function createCardImage(cardId, fieldSide) {
@@ -25,7 +65,7 @@ async function createCardImage(cardId, fieldSide) {
     cardImage.setAttribute("data-id", cardId);
     cardImage.classList.add("card");
 
-    if (fieldSide === playersSide.player) {
+    if (fieldSide === state.playersSide.player) {
         cardImage.addEventListener("click", () => {
             setCardsField(cardImage.getAttribute("data-id"));
         });
@@ -48,8 +88,8 @@ async function drawCards(cardsNumber, fieldSide) {
 }
 
 function init() {
-    drawCards(5, playersSide.player);
-    drawCards(5, playersSide.enemy);
+    drawCards(5, state.playersSide.player);
+    drawCards(5, state.playersSide.enemy);
 }
 
 init();

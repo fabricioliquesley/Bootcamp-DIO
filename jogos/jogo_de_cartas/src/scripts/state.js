@@ -13,5 +13,13 @@ export const state = {
         player: document.querySelector("#player-field-card"),
         enemy: document.querySelector("#enemy-field-card")
     },
-    button: document.querySelector("next-duel")
+    playersSide: {
+        player: "player-cards",
+        playerBox : document.querySelector("#player-cards"),
+        enemy: "enemy-cards",
+        enemyBox : document.querySelector("#enemy-cards")
+    },
+    actions: {
+        button: document.querySelector("next-duel")
+    }
 }
