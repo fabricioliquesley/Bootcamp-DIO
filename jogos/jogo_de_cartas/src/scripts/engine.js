@@ -1,4 +1,4 @@
-// import { state } from "./state.js";
+import { state } from "./state.js";
 import { cardData } from "./cards.js";
 
 const playersSide = {
@@ -10,6 +10,12 @@ async function getRandomCardId() {
     const randomIndex = Math.floor(Math.random() * cardData.length);
 
     return cardData[randomIndex].id;
+}
+
+async function drawSelectedCard(index){
+    state.cardsSprites.card.src = cardData[index].img;
+    state.cardsSprites.name.textContent = cardData[index].name;
+    state.cardsSprites.type.textContent = `Type: ${cardData[index].type}`;
 }
 
 async function createCardImage(cardId, fieldSide) {
