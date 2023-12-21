@@ -78,3 +78,49 @@ body {
 #card-name {
     font-size: 1.4rem;
 }
+
+.container_right {
+    width: 65%;
+}
+
+.card_box_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.card-battle {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-battle-top, 
+.card-battle-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.card-battle-bottom {
+    margin-top: 3rem;
+}
+
+.card-infield {
+    height: 18rem;
+    width: 12.5rem;
+    border-radius: .8rem;
+}
+
+#next-duel {
+    display: none;
+}
+
+.card_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 20rem;
+}
