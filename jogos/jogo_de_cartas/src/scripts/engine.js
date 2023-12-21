@@ -29,11 +29,11 @@ async function createCardImage(cardId, fieldSide) {
         cardImage.addEventListener("click", () => {
             setCardsField(cardImage.getAttribute("data-id"));
         });
-    }
 
-    cardImage.addEventListener("mouseover", () => {
-        drawSelectedCard(cardId);
-    });
+        cardImage.addEventListener("mouseover", () => {
+            drawSelectedCard(cardId);
+        });
+    }
 
     return cardImage;
 }

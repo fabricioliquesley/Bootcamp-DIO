@@ -124,3 +124,12 @@ body {
     justify-content: space-around;
     height: 20rem;
 }
+
+#player-cards .card {
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+#player-cards .card:hover {
+    transform: scale(1.2);
+}
