@@ -129,9 +129,18 @@ async function drawCards(cardsNumber, fieldSide) {
     }
 }
 
+function backgroundMusic() {
+    const bgm = document.querySelector('#bgm');
+
+    bgm.play();
+    bgm.volume = .05;
+}
+
 function init() {
     drawCards(5, state.playersSide.player);
     drawCards(5, state.playersSide.enemy);
+
+    backgroundMusic();
 }
 
 init();
