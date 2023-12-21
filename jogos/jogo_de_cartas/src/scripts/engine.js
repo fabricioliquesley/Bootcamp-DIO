@@ -51,13 +51,14 @@ async function checkDuelResults(playerCardId, enemyCardId) {
 }
 
 async function resetDuel() {
+    state.fieldCards.player.src = "";
+    state.fieldCards.enemy.src = "";
     state.cardsSprites.card.src = "";
+    
     state.cardsSprites.name.textContent = "Selecione uma";
     state.cardsSprites.type.textContent = "Carta";
 
     state.actions.button.style.display = "none";
-    state.fieldCards.player.style.display = "none";
-    state.fieldCards.enemy.style.display = "none";
 
     removeAllCardsImages();
     init();
