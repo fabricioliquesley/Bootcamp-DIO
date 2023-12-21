@@ -23,6 +23,13 @@ async function removeAllCardsImages() {
     imgElements.forEach((img) => img.remove());
 }
 
+async function playAudio(status) {
+    const audio = new Audio(`./src/assets/audios/${status}.wav`);
+
+    audio.volume = 0.05;
+    audio.play();
+}
+
 async function checkDuelResults(playerCardId, enemyCardId) {
     let duelResults = "Empate";
 
@@ -32,10 +39,12 @@ async function checkDuelResults(playerCardId, enemyCardId) {
         duelResults = "Ganhou";
 
         state.score.playerScore++;
+        playAudio("win");
     } else if (playerCard.LoseOf.includes(enemyCardId)) {
         duelResults = "Perdeu"
 
         state.score.enemyScore++;
+        playAudio("lose");
     }
 
     return duelResults;
