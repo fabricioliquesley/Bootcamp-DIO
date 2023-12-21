@@ -54,7 +54,7 @@ async function resetDuel() {
     state.fieldCards.player.src = "";
     state.fieldCards.enemy.src = "";
     state.cardsSprites.card.src = "";
-    
+
     state.cardsSprites.name.textContent = "Selecione uma";
     state.cardsSprites.type.textContent = "Carta";
 
@@ -79,6 +79,11 @@ async function updateScore() {
     scoreBox.textContent = `wins: ${state.score.playerScore} | lose: ${state.score.enemyScore}`;
 }
 
+async function drawCardsInField(playerCardId, enemyCardId) {
+    state.fieldCards.player.src = cardData[playerCardId].img;
+    state.fieldCards.enemy.src = cardData[enemyCardId].img;
+}
+
 async function setCardsField(cardId) {
     await removeAllCardsImages();
 
@@ -87,8 +92,7 @@ async function setCardsField(cardId) {
     state.fieldCards.player.style.display = "block";
     state.fieldCards.enemy.style.display = "block";
 
-    state.fieldCards.player.src = cardData[cardId].img;
-    state.fieldCards.enemy.src = cardData[enemyCardId].img;
+    await drawCardsInField(cardId, enemyCardId);
 
     let duelResults = await checkDuelResults(cardId, enemyCardId);
 
