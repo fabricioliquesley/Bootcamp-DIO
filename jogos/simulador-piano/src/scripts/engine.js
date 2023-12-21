@@ -10,8 +10,6 @@ const playTune = (key) => {
     
     audio.play();
     audio.volume = volume ?? .5;
-    
-    console.log(audio.volume)
 }
 
 pianoKeys.forEach((key) => {
