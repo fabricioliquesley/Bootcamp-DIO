@@ -29,16 +29,44 @@ async function checkDuelResults(playerCardId, enemyCardId) {
     let playerCard = cardData[playerCardId];
 
     if (playerCard.WinOf.includes(enemyCardId)) {
-        duelResults = "Vitoria";
-    
+        duelResults = "Ganhou";
+
         state.score.playerScore++;
     } else if (playerCard.LoseOf.includes(enemyCardId)) {
-        duelResults = "Derrota"
+        duelResults = "Perdeu"
 
         state.score.enemyScore++;
     }
 
     return duelResults;
+}
+
+async function resetDuel() {
+    state.cardsSprites.card.src = "";
+    state.cardsSprites.name.textContent = "Selecione uma";
+    state.cardsSprites.type.textContent = "Carta";
+
+    state.actions.button.style.display = "none";
+    state.fieldCards.player.style.display = "none";
+    state.fieldCards.enemy.style.display = "none";
+
+    removeAllCardsImages();
+    init();
+}
+
+async function drawButton(result) {
+    let button = state.actions.button;
+
+    button.textContent = result;
+    button.style.display = "block";
+
+    button.addEventListener("click", () => resetDuel());
+}
+
+async function updateScore() {
+    let scoreBox = state.score.scoreBox;
+
+    scoreBox.textContent = `wins: ${state.score.playerScore} | lose: ${state.score.enemyScore}`;
 }
 
 async function setCardsField(cardId) {

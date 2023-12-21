@@ -20,6 +20,6 @@ export const state = {
         enemyBox : document.querySelector("#enemy-cards")
     },
     actions: {
-        button: document.querySelector("next-duel")
+        button: document.querySelector("#next-duel")
     }
 }
