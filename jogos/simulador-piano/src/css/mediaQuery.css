@@ -1,0 +1,66 @@
+:root {
+    font-size: 62.5%;
+}
+
+/* Estilos para telas médias */
+@media (max-width: 916px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    main {
+        padding: 3rem;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    #pianoKeys .key.whiteKey {
+        height: 20rem;
+    }
+
+    #pianoKeys .key.blackKey {
+        width: 3rem;
+        height: 15rem;
+    }
+
+    .container > .instrumentsSelect {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Estilos para telas pequenas */
+@media only screen and (max-width: 710px) {
+    body {
+        font-size: 1rem; /* Ajuste o tamanho da fonte conforme necessário */
+    }
+
+    body > main {
+        padding: 2rem;
+        transform: rotate(90deg);
+    }
+
+    #pianoKeys .key.whiteKey {
+        height: 15rem;
+    }
+
+    #pianoKeys .key.blackKey {
+        width: 2.5rem;
+        height: 12rem;
+    }
+
+    main > section.header {
+        margin-bottom: 1rem;
+    }
+
+    main > .container {
+        gap: 1rem;
+    }
+
+    .instrumentsSelect .instrumentBtn > img{
+        width: 2.4rem;
+    }
+}
+
