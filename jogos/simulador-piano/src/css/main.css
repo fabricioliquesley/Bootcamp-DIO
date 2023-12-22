@@ -169,6 +169,6 @@ section#pianoKeys {
     background: #005CC8;
 }
 
-.instrumentBtn:hover {
-    background: rgb(184, 184, 184);
+.instrumentBtn:not(.active):hover {
+    background: rgb(139, 139, 139);
 }
