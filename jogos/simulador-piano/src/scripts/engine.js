@@ -1,3 +1,6 @@
+import "./changeSounds.js";
+import { state } from "./state.js";
+
 const pianoKeys = document.querySelectorAll("#pianoKeys .key");
 const keysCheck = document.querySelector("#keysCheck");
 const VolumeSlider = document.querySelector(".volumeSlider");
@@ -5,8 +8,8 @@ const VolumeSlider = document.querySelector(".volumeSlider");
 let mappedKeys = [];
 let volume;
 
-const playTune = (key) => {
-    let audio = new Audio(`./src/audios/piano/${key}.wav`);
+const playTune = (folder, key) => {
+    let audio = new Audio(`./src/audios/${folder}/${key}.wav`);
     
     audio.play();
     audio.volume = volume ?? .5;
@@ -15,7 +18,7 @@ const playTune = (key) => {
 pianoKeys.forEach((key) => {
     let keyData = key.dataset.key;
 
-    key.addEventListener("click", () => playTune(keyData));
+    key.addEventListener("click", () => playTune(state.folderSoundName, keyData));
     mappedKeys.push(keyData);
 });
 
@@ -24,7 +27,7 @@ document.addEventListener("keydown", (event) => {
 
     if (!mappedKeys.includes(keyPress)) return;
 
-    playTune(keyPress);
+    playTune(state.folderSoundName, keyPress);
 
     let clickedKey = document.querySelector(`[data-key="${keyPress}"]`);
 
