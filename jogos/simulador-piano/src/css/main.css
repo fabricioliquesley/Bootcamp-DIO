@@ -81,6 +81,12 @@ input[type="range"]{
     transform: translateX(17px);
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
 section#pianoKeys {
     position: relative;
     gap: 2px;
@@ -144,4 +150,25 @@ section#pianoKeys {
 
 .key .letter.hide {
     opacity: 0;
+}
+
+.instrumentsSelect {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.instrumentBtn {
+    padding: 1rem;
+    border-radius: .8rem;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.instrumentBtn.active {
+    background: #005CC8;
+}
+
+.instrumentBtn:hover {
+    background: rgb(184, 184, 184);
 }
