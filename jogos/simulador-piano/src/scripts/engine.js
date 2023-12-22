@@ -1,31 +1,24 @@
 import "./changeSounds.js";
 import { state } from "./state.js";
 
-const pianoKeys = document.querySelectorAll("#pianoKeys .key");
-const keysCheck = document.querySelector("#keysCheck");
-const VolumeSlider = document.querySelector(".volumeSlider");
-
-let mappedKeys = [];
-let volume;
-
 const playTune = (folder, key) => {
     let audio = new Audio(`./src/audios/${folder}/${key}.wav`);
     
     audio.play();
-    audio.volume = volume ?? .5;
+    audio.volume = state.volume;
 }
 
-pianoKeys.forEach((key) => {
+state.actions.pianoKeys.forEach((key) => {
     let keyData = key.dataset.key;
 
     key.addEventListener("click", () => playTune(state.folderSoundName, keyData));
-    mappedKeys.push(keyData);
+    state.mappedKeys.push(keyData);
 });
 
 document.addEventListener("keydown", (event) => {
     let keyPress = event.key;
 
-    if (!mappedKeys.includes(keyPress)) return;
+    if (!state.mappedKeys.includes(keyPress)) return;
 
     playTune(state.folderSoundName, keyPress);
 
@@ -46,12 +39,12 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-keysCheck.addEventListener("change", () => {
+state.actions.keysCheck.addEventListener("change", () => {
     let letter = document.querySelectorAll(".letter");
 
     letter.forEach(letter => letter.classList.toggle("hide"));
 });
 
-VolumeSlider.addEventListener("input", () => {
-    volume = (VolumeSlider.value) / 100;
+state.actions.VolumeSlider.addEventListener("input", () => {
+    state.volume = (state.actions.VolumeSlider.value) / 100;
 });
